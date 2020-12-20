@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <layout-wrapper>
     <header class="w-full absolute md:static bg-black px-2 py-2 z-50">
       <div class="md:max-w-3xl mx-auto md:flex md:items-center">
         <div
@@ -198,7 +198,7 @@
         Copyright © 2020 NUXT SMAPLE SITE DEMO
       </p>
     </footer>
-  </div>
+  </layout-wrapper>
 </template>
 
 <script></script>

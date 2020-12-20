@@ -52,6 +52,10 @@ export default {
 				}
 			})
 		}
-	}
-	,
+	},
+
+	// エラーページのアドレスは404.html
+	generate: {
+    fallback: true,
+  },
 }

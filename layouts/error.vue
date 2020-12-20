@@ -11,3 +11,13 @@
     </div>
   </layout-wrapper>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: 'PAGE NOT FOUND',
+    }
+  },
+}
+</script>

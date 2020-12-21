@@ -1,3 +1,4 @@
+const { API_KEY, API_URL } = process.env
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -63,5 +64,13 @@ export default {
 	// エラーページのアドレスは404.html
 	generate: {
     fallback: true,
+	},
+
+	// API
+	publicRuntimeConfig: {
+    apiUrl: API_URL
+  },
+  privateRuntimeConfig: {
+    apiKey: API_KEY
   },
 }

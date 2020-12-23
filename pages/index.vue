@@ -23,10 +23,16 @@
         />
       </div>
       <base-button name="メニューの一覧" link="/menu/" />
-      <h2 class="font-sans text-lg text-gray-800 text-center text-3xl mb-10">
-        MdN Cafeのお知らせ
-      </h2>
-      <layout-information-list />
+      <base-heading>MdN Cafeのお知らせ</base-heading>
+      <div class="mb-20">
+        <layout-information-list
+          v-for="(item, index) in infoItems"
+          :id="item.id"
+          :key="index"
+          :date="item.date"
+          :title="item.title"
+        />
+      </div>
       <base-button name="お知らせの一覧" link="/information/" />
     </div>
   </layout-wrapper>
@@ -42,8 +48,12 @@ export default {
         headers: { 'X-API-KEY': $config.apiKey },
       }
     )
+    const info = await axios.get(`${$config.apiUrl}/information?limit=3`, {
+      headers: { 'X-API-KEY': $config.apiKey },
+    })
     return {
       menuItems: menu.data.contents,
+      infoItems: info.data.contents,
     }
   },
 }
